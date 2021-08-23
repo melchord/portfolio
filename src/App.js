@@ -7,7 +7,7 @@ import 'firebase/firestore';
 
 import { Home } from './pages';
 
-firebase.initializeApp({
+const firebaseApp = firebase.initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_FIREBASE_AUTH_DOMAIN,
   projectId: process.env.REACT_APP_PROJECT_ID,
@@ -17,9 +17,18 @@ firebase.initializeApp({
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 });
 
-firebase.firestore();
-
 function App() {
+  const db = firebaseApp.firestore();
+  db.collection('cities')
+    .doc('LA')
+    .set({ name: 'Los Angeles', state: 'CA', country: 'USA' })
+    .then(function () {
+      console.log('Document written');
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
   return <Home />;
 }
 
