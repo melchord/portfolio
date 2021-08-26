@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 
+import { Circles } from '../../components';
+
 const Component = ({ children, title }) => (
   <div className='layout'>
     <Helmet>
@@ -13,6 +15,7 @@ const Component = ({ children, title }) => (
       <title>{title}</title>
     </Helmet>
     {children}
+    <Circles />
   </div>
 );
 
