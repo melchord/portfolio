@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 
-import { Circles } from '../../components';
+import { Circles, Navbar } from '../../components';
 
 const Component = ({ children, title }) => (
   <div className='layout'>
@@ -14,6 +14,7 @@ const Component = ({ children, title }) => (
       <link rel='shortcut icon' href='./logo.ico' />
       <title>{title}</title>
     </Helmet>
+    <Navbar />
     {children}
     <Circles />
   </div>
