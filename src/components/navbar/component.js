@@ -6,11 +6,11 @@ import './index.scss';
 
 const Component = () => {
   return (
-    <Navbar expand='lg'>
+    <Navbar expand='lg' className='topbar' variant='dark'>
       <Container>
         <Navbar.Brand href='/'>MD</Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
-        <Navbar.Collapse id='basic-navbar-nav'>
+        <Navbar.Collapse id='basic-navbar-nav' bg='dark'>
           <Nav className='me-auto'>
             <Link to='/'>Home</Link>
             <Link to='/skills'>Skills</Link>
