@@ -1,14 +1,12 @@
 import React from 'react';
-
-import { Layout } from '../../components';
+import { Navbar } from '../../components';
 
 const Home = () => {
   return (
-    <Layout title='Melchor Dominguez'>
-      <div className='home'>
-        <h1>Melchor Dominguez</h1>
-      </div>
-    </Layout>
+    <div className='home'>
+      <Navbar />
+      <h1>Melchor Dominguez</h1>
+    </div>
   );
 };
 

@@ -1,23 +1,33 @@
 import React from 'react';
 
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
-import './App.scss';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Home } from './pages';
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Switch>
-          <Route path='/'>
-            <Home />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </div>
+    <Router>
+      {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+      <Switch>
+        <Route path='/about'>
+          <About />
+        </Route>
+        <Route path='/users'>
+          <Users />
+        </Route>
+        <Route path='/'>
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
-export default App;
+function About() {
+  return <h2>About</h2>;
+}
+
+function Users() {
+  return <h2>Users</h2>;
+}
