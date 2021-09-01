@@ -10,8 +10,8 @@ const Component = () => {
       <Container>
         <Navbar.Brand href='/'>MD</Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
-        <Navbar.Collapse id='basic-navbar-nav' bg='dark'>
-          <Nav className='me-auto'>
+        <Navbar.Collapse id='basic-navbar-nav' bg='dark' className='justify-content-end'>
+          <Nav>
             <Link to='/'>Home</Link>
             <Link to='/skills'>Skills</Link>
             <Link to='/portfolio'>Portfolio</Link>
