@@ -6,7 +6,8 @@ const Home = () => {
     <Layout>
       <div className='home'>
         <Navbar />
-        <h1>Melchor Dominguez</h1>
+        <h1>I am Melchor Dominguez</h1>
+				<h2></h2>
       </div>
     </Layout>
   );
