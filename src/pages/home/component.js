@@ -3,14 +3,14 @@ import { Firebase, Layout, Navbar } from '../../components';
 
 const Home = () => {
   const db = Firebase.firestore();
-  const header = db.collection('Pages').doc('Home').get()
-		.then(snapshot => {
-			snapshot
-			.data
-			.toString
-		}
-	);
-  console.log(header);
+  let header = 'Loading...';
+  db.collection('Pages')
+    .doc('Home')
+    .get()
+    .then((snapshot) => {
+      header = snapshot.data().header;
+      console.log(`HOME --- header: ${header}`);
+    });
   return (
     <Layout>
       <div className='home'>
