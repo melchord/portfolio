@@ -1,4 +1,6 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { Firebase, Layout, Navbar } from '../../components';
 
 const Home = () => {

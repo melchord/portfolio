@@ -6,10 +6,16 @@ let store;
 
 const initialState = {
   title: 'Melchor Dominguez',
+  header: 'LOADING...',
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case 'updateHeader':
+      return {
+        ...state,
+        header: action.currentHeader,
+      };
     default:
       return state;
   }
