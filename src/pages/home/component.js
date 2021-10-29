@@ -1,5 +1,4 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 import { Firebase, Layout, Navbar } from '../../components';
 
@@ -18,7 +17,7 @@ const Home = () => {
       <div className='home'>
         <Navbar />
         <h1>{header}</h1>
-        <h2>Software Engineer locaed in Charlotte.</h2>
+        <h2>Software Engineer located in Charlotte.</h2>
         <h2>
           Experienced in <span>Javascript</span>
         </h2>
