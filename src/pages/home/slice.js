@@ -16,7 +16,7 @@ export const homeSlice = createSlice({
 });
 
 // Action Creators
-export const { setTitle } = homeSlice.actions;
+export const actions = homeSlice.actions;
 
 // Selectors
 export const selectTitle = (state) => state.HomePage.title;
