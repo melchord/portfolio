@@ -7,17 +7,7 @@ import { Layout, Navbar } from '../../components';
 
 import './index.scss';
 
-const Component = ({ header, title, subtitle }) => {
-  /* const db = Firebase.firestore();
-  let header = 'Loading...';
-  db.collection('Pages')
-    .doc('Home')
-    .get()
-    .then((snapshot) => {
-      header = snapshot.data().header;
-      console.log(`HOME --- header: ${header}`);
-    });
-	*/
+const Component = ({ header, title, subtitle, description }) => {
   return (
     <Layout header={header}>
       <div className='home-page'>
@@ -26,6 +16,7 @@ const Component = ({ header, title, subtitle }) => {
           <Col xs={12} lg={6} className='text-col'>
             <h1>{title}</h1>
             <h2>{subtitle}</h2>
+            <h2>{description}</h2>
           </Col>
           <Col xs={12} lg={6}>
             <div className='image'>
@@ -44,12 +35,14 @@ Component.propTypes = {
   header: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
+  description: PropTypes.string,
 };
 
 Component.defaultProps = {
   header: 'Home-Page',
   title: 'I am Melchor Dominguez',
   subtitle: 'I create websites and software.',
+  description: 'I make websites.',
 };
 
 export default Component;
