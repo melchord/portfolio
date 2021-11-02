@@ -14,6 +14,10 @@ h1 {
   text-align: center;
 }
 
+li {
+  color: white;
+}
+
 a {
   position: relative;
   color: #798f8c;
@@ -46,8 +50,4 @@ a:hover:before {
 
 hr {
   border-top: 10px solid rgba(1, 1, 1, 1);
-}
-
-* {
-  box-sizing: border-box;
 }
