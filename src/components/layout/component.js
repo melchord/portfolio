@@ -11,6 +11,8 @@ const Component = ({ children, header }) => (
         rel='stylesheet'
         href='https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Montserrat&display=swap'
       />
+      <meta name='title' content='Melchor Dominguez' />
+      <meta name='description' content='I am a software engineer located in Charlotte, NC.' />
       <link rel='shortcut icon' href='./logo.ico' />
       <title>{header}</title>
     </Helmet>
