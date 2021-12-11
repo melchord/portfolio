@@ -6,9 +6,9 @@ import './index.scss';
 
 const Component = ({ logo, title, text }) => {
   return (
-    <Col xs={12} md={4}>
+    <Col md={12}>
       <Card className='skills-card'>
-        <Card.Img variant='top' src={logo} />
+        <Card.Header>{logo}</Card.Header>
         <Card.Title>{title}</Card.Title>
         <Card.Body>{text}</Card.Body>
       </Card>

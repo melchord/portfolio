@@ -1,2 +1,16 @@
 .skills-card {
+  border: 1px solid white !important;
+  background-color: transparent !important;
+  .card-header {
+    svg {
+      color: white;
+    }
+  }
+  .card-title {
+    color: white;
+  }
+
+  .card-body {
+    color: white;
+  }
 }
