@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Component from './component';
-import { actions, selectHeaders, selectTitle, selectSubtitle, selectDescription } from './slice';
+import { actions, selectHeader, selectTitle, selectSubtitle, selectDescription } from './slice';
 
 import BindComponent from '../../components/utils/bind_component';
 
