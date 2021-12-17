@@ -1,14 +1,27 @@
 import React from 'react';
-import { Alert } from 'react-bootstrap';
+import { Container, Col } from 'react-bootstrap';
 
-import { Layout } from '../../components';
+import { Layout, Navbar } from '../../components';
+
+import './index.scss';
 
 const Component = () => {
   return (
     <Layout title='404: Error'>
-      <div className='404'>
-        <h1> Something Went Wrong</h1>
-        <Alert>TODO: Finish 404 Screen</Alert>
+      <div className='not-found'>
+        <Navbar />
+        <Container>
+          <Col xs={12} className='text-col'>
+            <h1>Something Went Wrong!</h1>
+            <h2>The page you are searching for doesn{`'`}t exist or another error has occured.</h2>
+            <h2>This website is actively in development, so pages may simply be not ready yet.</h2>
+          </Col>
+          <Col xs={12} className='image-col'>
+            <div className='image'>
+              <img className='page_not_found' src='/page_not_found.svg' alt='404-image' />
+            </div>
+          </Col>
+        </Container>
       </div>
     </Layout>
   );
