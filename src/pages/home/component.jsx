@@ -13,12 +13,12 @@ const Component = ({ header, title, subtitle, description }) => {
       <div className='home-page'>
         <Navbar />
         <Container>
-          <Col xs={12} lg={6} className='text-col'>
+          <Col xs={12} className='text-col'>
             <h1>{title}</h1>
             <h2>{subtitle}</h2>
             <h2>{description}</h2>
           </Col>
-          <Col xs={12} lg={6}>
+          <Col xs={12}>
             <div className='image'>
               <img src='/selecting.svg' alt='home-image' />
             </div>
