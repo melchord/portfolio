@@ -1,8 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { homeReducer } from './pages';
-import { skillsReducer } from './pages';
+import { homeReducer, skillsReducer, portfolioReducer } from './pages';
 
 export default configureStore({
-  reducer: { HomePage: homeReducer, SkillsPage: skillsReducer },
+  reducer: { HomePage: homeReducer, SkillsPage: skillsReducer, PortfolioPage: portfolioReducer },
 });
