@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Firebase } from './components';
-import { Home, NotFound, Skills } from './pages';
+import { Home, NotFound, Portfolio, Skills } from './pages';
 
 export default function App() {
   const db = Firebase.firestore();
@@ -17,6 +17,9 @@ export default function App() {
         </Route>
         <Route exact path='/skills'>
           <Skills db={db} />
+        </Route>
+        <Route exact path='/portfolio'>
+          <Portfolio db={db} />
         </Route>
         <Route>
           <NotFound />
