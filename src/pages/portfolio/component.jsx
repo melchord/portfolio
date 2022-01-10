@@ -1,12 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Col } from 'react-bootstrap';
+import { Container, Col, Row } from 'react-bootstrap';
 
-import { Navbar, Layout } from '../../components';
+import { Navbar, Layout, ProjectCard } from '../../components';
 
 import './index.scss';
 
-const Component = ({ header, title, subtitle, description }) => {
+const Component = ({ header, title, subtitle, description, projects }) => {
+  const projectCards = projects.map((project) => {
+    console.log(project.title);
+    return (
+      <ProjectCard
+        key={project.id}
+        title={project.title}
+        link={project.link}
+        summary={project.summary}
+        tags={project.tags}
+      />
+    );
+  });
   return (
     <Layout header={header}>
       <div className='portfolio-page'>
@@ -17,6 +29,7 @@ const Component = ({ header, title, subtitle, description }) => {
             <h2>{subtitle}</h2>
             <h2>{description}</h2>
           </Col>
+          <Row>{projectCards}</Row>
         </Container>
       </div>
     </Layout>
@@ -30,6 +43,7 @@ Component.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   description: PropTypes.string,
+  projects: PropTypes.array,
 };
 
 Component.defaultProps = {
@@ -37,6 +51,7 @@ Component.defaultProps = {
   title: 'Portfolio',
   subtitle: 'Nothing to see here.',
   description: 'I have worked with a lot of software.',
+  projects: [],
 };
 
 export default Component;

@@ -7,6 +7,7 @@ export const portfolioSlice = createSlice({
     title: 'My Portfolio',
     subtitle: 'Loading Subtitle...',
     description: 'Loading Description...',
+    projects: [],
   },
   reducers: {
     setTitle: (state, action) => {
@@ -21,6 +22,17 @@ export const portfolioSlice = createSlice({
     setDescription: (state, action) => {
       state.description = action.payload;
     },
+    setProjects: (state, action) => {
+      var found = false;
+      found = state.projects.find(function (project) {
+        if (project.title === action.payload.title) {
+          return true;
+        }
+      });
+      if (!found) {
+        state.projects.push(action.payload);
+      }
+    },
   },
 });
 
@@ -32,6 +44,7 @@ export const selectHeader = (state) => state.PortfolioPage.header;
 export const selectTitle = (state) => state.PortfolioPage.title;
 export const selectSubtitle = (state) => state.PortfolioPage.subtitle;
 export const selectDescription = (state) => state.PortfolioPage.description;
+export const selectProjects = (state) => state.PortfolioPage.projects;
 
 // Reducer
 export default portfolioSlice.reducer;

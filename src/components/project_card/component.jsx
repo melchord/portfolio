@@ -5,9 +5,10 @@ import { Col, Card } from 'react-bootstrap';
 import './index.scss';
 
 const Component = ({ title, summary, tags, link }) => {
-  tagsBody = tags.map((tag, index) => {
+  const tagsBody = tags.map((tag, index) => {
     return <span key={index}>{tag}</span>;
   });
+  console.log(title);
   return (
     <Col xs={12} md={6}>
       <Card className='project-card'>
@@ -17,7 +18,7 @@ const Component = ({ title, summary, tags, link }) => {
         <Card.Body>
           {summary}
           <div className='line' />
-          {tagsBody}
+          <div className='tags'>{tagsBody}</div>
         </Card.Body>
       </Card>
     </Col>
@@ -32,3 +33,5 @@ Component.propTypes = {
   tags: PropTypes.array.isRequired,
   link: PropTypes.string,
 };
+
+export default Component;

@@ -1,31 +1,38 @@
-.project-card {
-  .card {
+.project-card.card {
+  margin: 10px;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: transparent;
+  border: 1px solid white;
+
+  .card-title a {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .card-body {
+    color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: transparent;
-    margin: 1px solid white;
+  }
 
-    .card-title {
-      color: white;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-decoration: underline;
-      cursor: pointer;
-    }
+  .line {
+    align-self: center;
+    width: 100px;
+    height: 10px;
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+  }
 
-    .card-body {
-      max-width: 200px;
-    }
-
-    .line {
-      width: 100px;
-      height: 10px;
-      border-bottom: 1px solid white;
-      margin-bottom: 10px;
+  .tags {
+    span:not(:last-child)::after {
+      content: ', ';
     }
   }
 }
