@@ -29,6 +29,14 @@ const getComponentProps = ({ db }) => {
       onChangeDescription(snapshot.data().description);
     });
 
+  db.collection('Projects')
+    .get()
+    .then((snapshot) => {
+      snapshot.forEach((doc) => {
+        console.log(doc.id, '==>', doc.data());
+      });
+    });
+
   return {
     header: currentHeader,
     title: currentTitle,
