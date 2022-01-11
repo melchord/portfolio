@@ -8,7 +8,6 @@ import './index.scss';
 
 const Component = ({ header, title, subtitle, description, projects }) => {
   const projectCards = projects.map((project) => {
-    console.log(project.title);
     return (
       <ProjectCard
         key={project.id}
