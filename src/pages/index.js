@@ -1,3 +1,4 @@
+export { default as Contact, contactReducer } from './contact';
 export { default as Home, homeReducer } from './home';
 export { default as NotFound } from './not_found';
 export { default as Portfolio, portfolioReducer } from './portfolio';
