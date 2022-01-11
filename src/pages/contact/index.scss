@@ -1,0 +1,9 @@
+.contact-page {
+  .button-row {
+    justify-content: center;
+    > * {
+      margin: 10px;
+      width: fit-content;
+    }
+  }
+}

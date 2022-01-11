@@ -1,17 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Col } from 'react-bootstrap';
+import { Container, Col, Row } from 'react-bootstrap';
 
-import { Navbar, Layout } from '../../components';
+import { Navbar, Layout, LinkButton } from '../../components';
 
 import './index.scss';
 
 const Component = ({ header, title, subtitle, description, links }) => {
   var linksMap = {};
+  const linksButtons = [];
   if (links) {
-    linksMap = JSON.parse(links);
+    linksMap = new Map(Object.entries(JSON.parse(links)));
+    console.log(linksMap instanceof Map);
   }
-  console.log(linksMap);
+
+  if (linksMap instanceof Map) {
+    for (const [key, value] of linksMap.entries()) {
+      linksButtons.push(<LinkButton key={key} type={key} link={value} />);
+    }
+  }
+
   return (
     <Layout header={header}>
       <div className='contact-page'>
@@ -22,6 +30,7 @@ const Component = ({ header, title, subtitle, description, links }) => {
             <h2>{subtitle}</h2>
             <h2>{description}</h2>
           </Col>
+          <Row className='button-row'>{linksButtons}</Row>
         </Container>
       </div>
     </Layout>
