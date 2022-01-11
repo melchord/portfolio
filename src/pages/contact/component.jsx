@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from 'react-bootstrap';
+import { Container, Col } from 'react-bootstrap';
 
 import { Navbar, Layout } from '../../components';
 
 import './index.scss';
 
 const Component = ({ header, title, subtitle, description, links }) => {
-  console.log(links);
+  var linksMap = {};
+  if (links) {
+    linksMap = JSON.parse(links);
+  }
+  console.log(linksMap);
   return (
     <Layout header={header}>
       <div className='contact-page'>
@@ -31,7 +35,7 @@ Component.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   description: PropTypes.string,
-  links: PropTypes.array,
+  links: PropTypes.string,
 };
 
 Component.defaultProps = {
@@ -39,7 +43,7 @@ Component.defaultProps = {
   title: 'Contact',
   subtitle: 'Nothing to see here.',
   description: 'Coming Soon...',
-  links: [],
+  links: '',
 };
 
-export default Compoonent;
+export default Component;

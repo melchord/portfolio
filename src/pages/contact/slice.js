@@ -7,7 +7,7 @@ export const contactSlice = createSlice({
     title: 'Contact',
     subtitle: 'Loading Subtitle...',
     description: 'Loading Description...',
-    links: new Map(),
+    links: '',
   },
   reducers: {
     setTitle: (state, action) => {
@@ -23,7 +23,7 @@ export const contactSlice = createSlice({
       state.description = action.payload;
     },
     setLinks: (state, action) => {
-      state.links = new Map(action.payload);
+      state.links = JSON.stringify(action.payload);
     },
   },
 });
