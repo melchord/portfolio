@@ -6,7 +6,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store';
 
-import 'bootstrap/dist/css/bootstrap.css';
 import './index.scss';
 
 ReactDOM.render(
@@ -22,3 +21,7 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals(console.debug);
+
+if (module.hot) {
+  module.hot.accept();
+}
