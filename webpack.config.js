@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
@@ -10,8 +10,11 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, './'), // where dev server will look for static files, not compiled
-    publicPath: '/', // relative path to output path wgere dev server will serve files
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 3000,
   },
   output: {
     filename: 'js/[name].bundle.js',
@@ -61,7 +64,7 @@ module.exports = {
       },
       {
         // config for fonts
-        test: /\(woff|woff2|eot|ttf|otf).%/,
+        test: /\.(woff|woff2|eot|ttf|otf)%/,
         use: [
           {
             loader: 'file-loader',
@@ -76,11 +79,18 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       // plugin for inserting scripts into html
+      template: './public/index.html',
+      manifest: './public/manifest.json',
     }),
     new MiniCssExtractPlugin({
       // plugin for controlling how css is extracted from js
       filename: 'css/[name].css',
       chunkFilename: 'css/[id].css',
+    }),
+    // fix "process is not defined" error
+    // (do npm install --save-dev process) before running webpack
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
     }),
   ],
 };
