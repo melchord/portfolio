@@ -1,7 +1,6 @@
 {
   "name": "portfolio",
   "homepage": "https://melchord.com",
-  "version": "1.0",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
