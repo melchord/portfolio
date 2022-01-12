@@ -28,7 +28,9 @@
     "eject": "react-scripts eject",
     "eslint": "eslint ./src --fix",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "dev": "webpack-dev-server",
+    "production": "webpack --mode production"
   },
   "eslintConfig": {
     "extends": [
