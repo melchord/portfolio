@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
+require('dotenv').config({ path: './.env' });
+
 module.exports = {
   mode: 'development',
   entry: {
@@ -91,6 +93,9 @@ module.exports = {
     // (do npm install --save-dev process) before running webpack
     new webpack.ProvidePlugin({
       process: 'process/browser',
+    }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env),
     }),
   ],
 };
