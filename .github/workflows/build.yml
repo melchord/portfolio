@@ -1,0 +1,28 @@
+name: build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: git-checkout
+        uses: actions/checkout@v2
+
+      - name: fetch
+        run: git fetch origin
+
+      - name: Push
+        uses: jeoy/github-deploy-actions@v1.0.1
+        env:
+          COMMIT_EMAIL: mdmngz411@gmail.com
+          COMMIT_NAME: Melchor Dominguez
+          ACCESS_TOKEN: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          DEPLOY_BRANCH: production
+          BUILD_SCRIPT: npm install && npm run build
+          FOLDER: build
