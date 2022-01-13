@@ -19,7 +19,7 @@ jobs:
         env:
           COMMIT_EMAIL: mdmngz411@gmail.com
           COMMIT_NAME: Melchor Dominguez
-          ACCESS_TOKEN: ${{ secrets/ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
           BASE_BRANCH: master
           DEPLOY_BRANCH: production
           BUILD_SCRIPT: npm install && npm run build
