@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Col } from 'react-bootstrap';
 
+import NotFoundImage from '../../assets/page_not_found.svg';
 import { Layout, Navbar } from '../../components';
 
 import './index.scss';
@@ -18,7 +19,7 @@ const Component = () => {
           </Col>
           <Col xs={12} className='image-col'>
             <div className='image'>
-              <img className='page_not_found' src='/page_not_found.svg' alt='404-image' />
+              <img className='page_not_found' src={NotFoundImage} alt='404-image' />
             </div>
           </Col>
         </Container>
