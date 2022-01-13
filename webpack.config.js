@@ -21,7 +21,6 @@ module.exports = {
   output: {
     filename: 'js/[name].bundle.js',
     path: path.resolve(__dirname, 'build'), // base path where to send compiled files
-    publicPath: '/', // base path where referenced files will be looked for
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
@@ -54,13 +53,10 @@ module.exports = {
       },
       {
         // config for images
-        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
         use: [
           {
             loader: 'file-loader',
-            options: {
-              outputPath: 'images',
-            },
           },
         ],
       },

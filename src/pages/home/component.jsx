@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Container, Col } from 'react-bootstrap';
 
+import Selecting from '../../assets/selecting.svg';
 import { Layout, Navbar } from '../../components';
 
 import './index.scss';
@@ -20,7 +21,7 @@ const Component = ({ header, title, subtitle, description }) => {
           </Col>
           <Col xs={12}>
             <div className='image'>
-              <img src='/selecting.svg' alt='home-image' />
+              <img src={Selecting} alt='home-image' />
             </div>
           </Col>
         </Container>
