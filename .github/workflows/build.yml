@@ -25,4 +25,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
           DEPLOY_BRANCH: production
           BUILD_SCRIPT: npm install && npm run build
-          FOLDER: dist
+          FOLDER: build
