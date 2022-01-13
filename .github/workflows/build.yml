@@ -14,17 +14,13 @@ jobs:
       - name: git-checkout
         uses: actions/checkout@v2
 
-      - name: Install all dependencies
-        run: npm ci && npm install
-
-      - name: Build
-        run: npm run build
-
       - name: Push
-        uses: s0/git-publish-subdir-action@develop
+        uses: jeoy/github-deploy-actions@v1.0.1
         env:
-          REPO: self
-          BRANCH: build # The branch name where you want to push the assets
-          FOLDER: build # The directory where the assets are located
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MESSAGE: 'Build: ({sha}) {msg}' # The commit message
+          COMMIT_EMAIL: mdmngz411@gmail.com
+          COMMIT_NAME: Melchor Dominguez
+          ACCESS_TOKEN: ${{ secrets/ACCESS_TOKEN }}
+          BASE_BRANCH: master
+          DEPLOY_BRANCH: production
+          BUILD_SCRIPT: npm install && npm run build
+          FOLDER: dist
