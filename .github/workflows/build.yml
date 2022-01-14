@@ -10,8 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-
     steps:
       - name: git-checkout
         uses: actions/checkout@v2
