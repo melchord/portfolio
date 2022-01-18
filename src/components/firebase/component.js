@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
-console.debug('check firebase key: ', proocess.env.REACT_APP_FIREBASE_API_KEY);
+console.debug('check firebase key: ', process.env.REACT_APP_FIREBASE_API_KEY);
 console.debug('check firebase key2: ', process.env.FIREBASE_API_KEY);
 
 const firebaseConfig = {
