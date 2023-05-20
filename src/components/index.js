@@ -1,5 +1,5 @@
 export { default as Circles } from './circles';
-export { default as Firebase } from './firebase';
+clear
 export { default as Layout } from './layout';
 export { default as LinkButton } from './link_button';
 export { default as Maths } from './maths';
